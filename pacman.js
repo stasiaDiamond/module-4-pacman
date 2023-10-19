@@ -1,3 +1,6 @@
+// *** --- comments prefaced by an asterisk (*) or lots o' lines (------) are my own, not part of curriculum --- ***
+
+
 // pos is the PacMan image position variable- it is set to 0 initially
 var pos = 0;
 //pageWidth is the width of the webpage. This is later used to calculate when Pac-Man needs to turn around. 
@@ -25,6 +28,8 @@ function Run() {
   let img = document.getElementById('PacMan');
   let imgWidth = img.width;
   focus = (focus + 1) % 2;
+  // Inside of the Run() function you will also have to add an extra argument "pageWidth", 
+  // which is declared on line 7 when you call the checkPageBounds() function below. 
   direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
   img.src = pacArray[direction][focus];
   if (direction) {
@@ -38,10 +43,6 @@ function Run() {
 // TODO: Add a Javascript setInterval() method that will call the Run() function above every 300 milliseconds. 
 // Note: in the video, Dr. Williams uses the setTimeout() method, but here we are going to use a slightly different
 // method called setInterval(), so that you can have practice using this method.
-// Inside of the Run() function you will also have to add an extra argument "pageWidth", 
-// which is declared on line 4 when you call the checkPageBounds() function below. 
-
-// * WOW! What helpful information and comments! This assignment even has a Guide that matches what we're doing. Finally! in Week 4. Finally some effort has been put into the student's experience. 
 setInterval(Run, 300);
 
 // This function determines the direction of PacMan based on screen edge detection. 
@@ -63,16 +64,24 @@ function checkPageBounds(direction, imgWidth, pos, pageWidth) {
   if (direction == 1 && pos < 0) {
     direction = 0;
   }
-  // *always return if you wanna use the data elsewhere!
+  // * always return if you wanna use the data elsewhere
   return direction;
 }
 
 //Please do not change
 module.exports = checkPageBounds;
 
+// ------ Challenges Encountered -------
+// * i moved the TODO about adding pageWidth to Run() up to where it's being used for better clarity
+// * is Run() supposed to capitalized? is that correct camelCasing?
+// * not a challenge, but my first applause: Week 5!
+// * we finally got helpful comments and a useful guide during the assignment
+// * it was a welcome reprieve to see care and effort put forth to ease the student's experience
 
 
-// ****** GIVEN SOLUTION BELOW:
+
+
+// --------- provided Solution File below for my reference:
 
 
 // var pos = 0;
