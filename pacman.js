@@ -29,7 +29,7 @@ function Run() {
   // * going into the DOM to bring the HTML element with the id of "PacMan"
   // * this makes it available to us in JS, housing it in the variable "img"
   let img = document.getElementById('PacMan');
-  // * this uses dot notation to access the width property from the PacMan Object in HTML doc
+  // * this uses dot notation to access the width property from the PacMan Object in the HTML doc
   let imgWidth = img.width;
   // * introducing the modulo operator!
   // * focus = (focus + 1) takes what focus is currently, and adds 1 to it
@@ -39,7 +39,7 @@ function Run() {
   focus = (focus + 1) % 2;
   // Inside of the Run() function you will also have to add an extra argument "pageWidth", 
   // which is declared on line 7 when you call the checkPageBounds() function below. 
-  // * direction is based on where PacPal is based on arguments passed to checkPageBounds()
+  // * direction is based on where PacPal is given the arguments passed to checkPageBounds()
   // * checkPageBounds() is declared below setInterval()
   direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
   // * uses dot notation on HTML element with id of img
@@ -50,7 +50,7 @@ function Run() {
     // * if direction is not 0, Pac's pos is SET EQUAL TO AND decreased by 20
     // * 20 pixels can be changed for differently spaced movement jumps
     pos -= 20;
-    // * 20 what you ask? Pixels! 
+    // * 20 what you ask? pixels! 
     // * going into HTML DOM to update left pos
     // * also going to concat with String 'px' so inline HTML CSS knows we mean pixels
     img.style.left = pos + 'px';
@@ -72,17 +72,17 @@ function checkPageBounds(direction, imgWidth, pos, pageWidth) {
   //
   // TODO: Complete this to reverse direction upon hitting screen edge
   // * check if direction is 0
-  // * AND (&&) check if his leading edge is about to hit the page's width
+  // * AND (&&) check if Pac's leading edge is about to hit the page's width
   if (direction == 0 && pos + imgWidth > pageWidth) {
     // * statements on BOTH sides of the && must be true in order to execute what's inside the curly braces
     // * if those are both true, the direction is set to 1
     direction = 1;
   }
 
-  // * now check if he's traveling from right going toward left
-  // * AND if his position is less than the 0 (pos = 0 declared in line 2)
+  // * now check if Pac's traveling from right going toward left
+  // * AND if Pac's position is less than the 0 (pos = 0) declared in line 5
   // * pos = 0 is essentially the starting point. It's the "pageWidth" for the left side
-  // * "if pacman is traveling towards the left, AND he gets back to where he started, turn around"
+  // * "if PacPal is traveling towards the left, AND gets back to the starting point, turn around"
   if (direction == 1 && pos < 0) {
     direction = 0;
   }
@@ -98,7 +98,7 @@ module.exports = checkPageBounds;
 // * is Run() supposed to capitalized? is that correct camelCasing?
 // * not a challenge, but my first applause: Week 5!
 // * we finally got helpful comments and a useful guide during the assignment
-// * it was a welcome reprieve to see care and effort put forth to ease the student's experience
+// * it was a welcome reprieve to see care and effort put forth to ease the students' experience
 
 
 
