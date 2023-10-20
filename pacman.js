@@ -65,7 +65,7 @@ function Run() {
 // Note: in the video, Dr. Williams uses the setTimeout() method, but here we are going to use a slightly different
 // method called setInterval(), so that you can have practice using this method.
 // * setInterval() takes 2 arguments: what to continually repeat and after how long in milliseconds
-setInterval(Run, 300);
+setInterval(Run, 200);
 
 // This function determines the direction of PacMan based on screen edge detection. 
 function checkPageBounds(direction, imgWidth, pos, pageWidth) {
