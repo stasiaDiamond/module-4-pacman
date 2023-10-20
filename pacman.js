@@ -7,7 +7,7 @@ var pos = 0;
 let pageWidth = window.innerWidth;
 //This array contains all the PacMan movement images
 const pacArray = [
-  // * i created my own cute froggy pacman
+  // * i created my own Froggy PacPal!
   //   ["./images/PacMan1.png", "./images/PacMan2.png"],
   //   ["./images/PacMan3.png", "./images/PacMan4.png"],
   ['./images/open-right.png', './images/closed-right.png'],
@@ -24,18 +24,39 @@ var focus = 0;
 
 // This function is called on mouse click. Every time it is called, it updates the PacMan image, 
 // position and direction on the screen.
+// * i don't see where it's called on mouse click? On page refresh?
 function Run() {
+  // * going into the DOM to bring the HTML element with the id of "PacMan"
+  // * this makes it available to us in JS, housing it in the variable "img"
   let img = document.getElementById('PacMan');
+  // * this uses dot notation to access the width property from the PacMan Object in HTML doc
   let imgWidth = img.width;
+  // * introducing the modulo operator!
+  // * focus = (focus + 1) takes what focus is currently, and adds 1 to it
+  // * it'll be either 0 or 1 or 2
+  // * modulo (%) is all about remainders
+  // * % 2 ensures that no matter what focus is, the remainder will be 0 or 1
   focus = (focus + 1) % 2;
   // Inside of the Run() function you will also have to add an extra argument "pageWidth", 
   // which is declared on line 7 when you call the checkPageBounds() function below. 
+  // * direction is based on where PacPal is based on arguments passed to checkPageBounds()
+  // * checkPageBounds() is declared below setInterval()
   direction = checkPageBounds(direction, imgWidth, pos, pageWidth);
+  // * uses dot notation on HTML element with id of img
+  // * sets image used from pacArray based on current direction and focus
   img.src = pacArray[direction][focus];
+  // * check if direction is evaluating as truthy. truthy = 0
   if (direction) {
+    // * if direction is not 0, Pac's pos is SET EQUAL TO AND decreased by 20
+    // * 20 pixels can be changed for differently spaced movement jumps
     pos -= 20;
+    // * 20 what you ask? Pixels! 
+    // * going into HTML DOM to update left pos
+    // * also going to concat with String 'px' so inline HTML CSS knows we mean pixels
     img.style.left = pos + 'px';
+    // * else: if direction is not 0
   } else {
+    // * add 20 instead and do same as above
     pos += 20;
     img.style.left = pos + 'px';
   }
@@ -43,6 +64,7 @@ function Run() {
 // TODO: Add a Javascript setInterval() method that will call the Run() function above every 300 milliseconds. 
 // Note: in the video, Dr. Williams uses the setTimeout() method, but here we are going to use a slightly different
 // method called setInterval(), so that you can have practice using this method.
+// * setInterval() takes 2 arguments: what to continually repeat and after how long in milliseconds
 setInterval(Run, 300);
 
 // This function determines the direction of PacMan based on screen edge detection. 
