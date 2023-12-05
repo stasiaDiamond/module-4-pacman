@@ -10,7 +10,7 @@ Clone the repo, then launch with Live Browser from VS Code. Animation will auto 
 
 ## Roadmap of Future Improvements
 
-* none at the moment
+Perhaps add a second PacPal and have them sync up in some way
 
 ## License Information
 
