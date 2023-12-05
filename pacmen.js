@@ -93,12 +93,7 @@ function checkPageBounds(direction, imgWidth, pos, pageWidth) {
 //Please do not change
 module.exports = checkPageBounds;
 
-// ------ Challenges Encountered -------
-// * i moved the TODO about adding pageWidth to Run() up to where it's being used for better clarity
-// * is Run() supposed to capitalized? is that correct camelCasing?
-// * not a challenge, but my first applause: Week 5!
-// * we finally got helpful comments and a useful guide during the assignment
-// * it was a welcome reprieve to see care and effort put forth to ease the students' experience
+
 
 
 
